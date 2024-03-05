@@ -1,0 +1,392 @@
+
+Aucun élément sélectionné
+
+Aller au contenu
+Utiliser Gmail avec un lecteur d'écran
+Conversations
+suite - candidature Acilyon - Ma cave à vin - PHP natif
+Boîte de réception
+
+Jessica LUCCHIN
+4 mars 2024 11:05 (il y a 1 jour)
+Bonjour Clément, J'espère que vous allez bien ! J'ai été débordé ces temps-ci mais je ne vous ai pas oublié, et comme promis suite à notre entretien, je reviend
+
+Clément Melchior
+4 mars 2024 14:42 (il y a 1 jour)
+Bonjour Jessica. Oui je vais bien merci. J'ai hâte de voir ce test et connaître la suite avec ce poste ! J'avais quelques questions j'en profite pour les poser
+
+Jessica LUCCHIN
+Pièces jointes
+11:21 (il y a 3 heures)
+À moi
+
+Bonjour Clément,
+
+Pour répondre à vos questions ;
+- Je pense être là entre 1 et 3 mois normalement, c'est assez vague.
+
+- La personne qui travaille sur Symfony (Sylius) est là depuis mi-janvier, elle a commencé directement dessus. Entre Sylius qui est difficile à apprivoiser, mon code initial qu'elle doit comprendre et continuer, et les cahiers des charges à faire, Nadia (la développeuse) est encore au début du projet.
+
+- A terme c'est effectivement le but, que vous épauliez Nadia pour avancer sur Sylius. Et également - puisque le but est de garder le prochain développeur le plus longtemps au sein de l'entreprise - c'est que tous les développeurs soient sur Symfony / Sylius lorsque la refonte sera en production.
+Mais je préfère être honnête avec vous comme lors de l'entretien, je pense que vous ne pourrez pas être sur Sylius avant l'année prochaine, étant donné la charge de travail assez conséquente sur le site actuel.
+
+Et bonne nouvelle, notre direction nous a bien annoncé qu'ils allaient mettre en place les tickets restaurants ainsi que les RTT, dans les mois à venir !
+
+Voici un "test" en PJ. Sur le word, le test à effectuer, et je vous ai également envoyé 3 fichiers avec des parties de code.
+Je vous laisse jusqu'à demain midi pour me faire un retour de ce que vous pensez être correct.
+N'hésitez pas si vous avez des questions, je vous répondrai.
+Vous ne pourrez pas vérifier le fonctionnement de votre côté, mais je souhaite juste savoir si vous réussirez à déchiffrer un peu le code.
+N'hésitez pas également, si vous avez plusieurs suppositions, plusieurs cheminements de pensées, à me faire part de tout ça demain ! :) Comme si vous étiez en condition d'une première tâche,
+
+Bonne journée à vous,
+
+--
+Cordialement
+
+
+Jessica Lucchin
+Responsable service informatique
+
+Expert en caves à vin et agencement de caves
+https://www.ma-cave-a-vin.fr
+webmaster4@ma-cave-a-vin.fr
+
+ 4 pièces jointes
+  • Analyse effectuée par Gmail
+
+Jessica LUCCHIN
+Bonjour Jessica,
+
+Je viens de recevoir le mail.
+
+J'ai
+
+<div style="float:right; margin-right: 20px;"><?php echo usericon($utilisateur['vip'], 50); ?></div>
+                         <img src="<?php echo BACK_URL; ?>/<?php echo ($utilisateur['civilite'] == 'Monsieur' ? "images/icon/user_male_pt.png" : "images/icon/user_female_pt.png"); ?>">
+                         <span style="font-size:14px;"><strong><?php echo $utilisateur['prenom']." ".$utilisateur['nom']; ?></strong></span>
+                         <a href="https://www.google.com/search?q=<?php echo $utilisateur['nom']." ".$utilisateur['prenom']?>" target="_blank"><img src="<?php echo BACK_URL; ?>/images/icone_google.jpg" title="Google" align="absmiddle" style="margin: 0 2px;"></a> 
+                         <a href="http://www.societe.com/cgi-bin/liste?dirig=<?php echo $utilisateur['nom']; ?>&pre=<?php echo $utilisateur['prenom']; ?>" target="_blank"><img src="<?php echo BACK_URL; ?>/images/societe.com.gif" align="absmiddle"  title="Societe.com" style="margin: 0 2px;" width="16"></a>
+                         <a href="http://www.118000.fr/search?sb_Professionnel1=sb_Particulier1&sb_quiquoi=<?php echo $utilisateur['nom']." ".$utilisateur['prenom']; ?>&sb_Ou=<?php echo $utilisateur['codepostal']; ?>" target="_blank"><img src="<?php echo BACK_URL; ?>/images/pj.ico" title="Annuaire" align="absmiddle" style="margin: 0 2px;" width="16"></a>
+                         <?php
+                         if($utilisateur['raisonsociale']){
+                         ?>
+                         <br />
+                         Société <strong><?php echo $utilisateur['raisonsociale']; ?></strong>
+                         <a href="https://www.google.com/search?q=<?php echo $utilisateur['raisonsociale']; ?>" target="_blank"><img src="<?php echo BACK_URL; ?>/images/icone_google.jpg" title="Google" align="absmiddle"></a>
+                         <a href="http://www.societe.com/cgi-bin/mainsrch?champ=<?php echo $utilisateur['raisonsociale']; ?>" target="_blank"><img src="<?php echo BACK_URL; ?>/images/societe.com.gif" title="societe.com" align="absmiddle" width="16"></a>
+                         <a href="http://www.118000.fr/search?sb_Professionnel1=sb_professionnel&sb_quiquoi=<?php echo $utilisateur['raisonsociale']; ?>&sb_Ou=<?php echo $utilisateur['codepostal']; ?>" target="_blank"><img src="<?php echo BACK_URL; ?>/images/pj.ico" title="Annaire" align="absmiddle" width="16"></a>
+                         <?php } ?>
+                         <?php if(!empty($utilisateur['tvaintracom'])){ ?>
+                              <br />
+                              <strong>TVA Intra.</strong> : <?php echo $utilisateur['tvaintracom']; ?>
+                         <?php } ?>
+                         <?php if(!empty($utilisateur['siret'])){ ?>
+                              <br />
+                              <strong>N° SIRET</strong> : <?php echo $utilisateur['siret']; ?>
+                         <?php } ?>
+                         <?php if(!empty($utilisateur['eori'])){ ?>
+                              <br />
+                              <strong>N° EORI</strong> : <?php echo $utilisateur['eori']; ?>
+                         <?php } ?>
+                         <?php if(!empty($utilisateur['adresse'])){ ?>
+                         <br />
+                         <?php echo $utilisateur['adresse']; ?> <a href="http://maps.google.com/maps?f=q&source=s_q&hl=fr&geocode=&q=<?php echo urlencode($utilisateur['adresse']); ?>+<?php echo $utilisateur['codepostal']; ?>+<?php echo urlencode($utilisateur['ville']); ?>" target="_blank"><img src="<?php echo BACK_URL; ?>/images/localiser.gif" width="20" align="absmiddle" title="Localiser" style="margin: 0 2px;"></a>
+                         <?php } ?>
+                         <?php if(!empty($utilisateur['adresse2'])){ ?>
+                         <br />
+                         <?php echo $utilisateur['adresse2']; ?>
+                         <?php } ?>
+                         <?php 
+                         if(!empty($utilisateur['codepostal']) || !empty($utilisateur['ville'])){
+                              echo "<br />".$utilisateur['codepostal']." ".$utilisateur['ville'];
+                         } 
+                         ?>
+                         <br />
+                        
+                         <?php echo $pays_lib[0]; ?> : <?php echo $utilisateur['langue']; ?> <img src="<?php echo BACK_URL; ?>/images/drapeaux/<?php echo $utilisateur['langue']; ?>.gif" width="20">
+                         <?php 
+                              echo('heure locale: <a href="https://www.google.com/search?q=heure+local+'.$pays_lib[0].'" target="_blank"> google</a>');
+                              ?>
+                         <br />
+                         <strong>Email</strong> : <span><?php echo $utilisateur['mail']; ?></span>
+						<?php
+							if(!empty($utilisateur['mail'])){
+								$sql="SELECT COUNT(*) FROM utilisateur WHERE mail='".$utilisateur['mail']."' ";
+								$is_doublon = $DB_site2->query_first($sql);
+								if($is_doublon[0]>1){
+									echo " &nbsp; <a href=\"utilisateur.php?src=".$utilisateur['mail']."\" target=\"_blank\"><font color=\"red\"><b>Email doublonné</b></font></a>";
+								}
+							}
+						?>
+                         <br />
+                         <strong>Tél </strong>: <?php echo "<span class=\"suivilink\" onclick=\"show_choix_suivi(this,'ficheinfo')\">".$utilisateur['telephone']."</span>
+                         <span class=\"addsuivi\">
+                         <span class=\"close\" onclick=\"close_choix_suivi(this)\">X</span>
+                         <span class=\"suivilink\" onclick=\"suiviauto('tel_out','client',".$utilisateur['userid'].",'Appel téléphone ".addslashes($utilisateur['nom']." ".$utilisateur['prenom'])."',undefined);epigy_call('".$utilisateur['telephone']."','".($utilisateur=='FR'?$user_info['telFR']:$user_info['telEN'])."');\">Click to call</span>
+                         <span class=\"suivilink\" onclick=\"copy(this)\">Copier</span>
+                         </span>"; ?>
+
+                         <?php if($utilisateur['portable']) { echo "<span class=\"suivilink\" onclick=\"show_choix_suivi(this,'ficheinfo')\">".$utilisateur['portable']."</span>
+                         <span class=\"addsuivi\">
+                         <span class=\"close\" onclick=\"close_choix_suivi(this)\">X</span>
+                         <span class=\"suivilink\" onclick=\"suiviauto('tel_out','client',".$utilisateur['userid'].",'Appel téléphone ".addslashes($utilisateur['nom']." ".$utilisateur['prenom'])."',undefined);epigy_call('".$utilisateur['portable']."','".($utilisateur=='FR'?$user_info['telFR']:$user_info['telEN'])."');\">Click to call</span>
+                         <span class=\"suivilink\" onclick=\"copy(this)\">Copier</span>
+                         </span>"; }?>
+
+                         <a href="https://www.google.com/search?q=<?php echo $utilisateur['telephone']; ?>" target="_blank"><img src="<?php echo BACK_URL; ?>/images/icone_google.jpg" title="Google" align="absmiddle"></a> 
+                         <a href="http://www.118000.fr/search?sb_Phone=<?php echo $utilisateur['telephone']; ?>" target="_blank"><img src="<?php echo BACK_URL; ?>/images/pj.ico" title="Annuaire inversé" align="absmiddle" width="16"></a>
+
+                         <?php
+                               //On vérifie s'il existe un doublon de numéro de téléphone
+                              if(!empty($utilisateur['telephone'])){
+                                   $sql_tel="SELECT COUNT(*) FROM utilisateur WHERE telephone='".$utilisateur['telephone']."' ";
+                                   $is_doublon_tel = $DB_site2->query_first($sql_tel);
+                                   if($is_doublon_tel[0]>1){
+                                        echo " <a href=\"utilisateur.php?src=".$utilisateur['telephone']."\" target=\"_blank\"><font color=\"red\"><b>Tél doublonné </b></font></a>";
+                                   }
+                              }
+                               //On vérifie s'il existe un doublon de numéro de portable
+                              if(!empty($utilisateur['portable'])){
+                                   $sql_portable="SELECT COUNT(*) FROM utilisateur WHERE portable='".$utilisateur['portable']."' ";
+                                   $is_doublon_portable = $DB_site2->query_first($sql_portable);
+                                   if($is_doublon_portable[0]>1){
+                                        echo " <a href=\"utilisateur.php?src=".$utilisateur['portable']."\" target=\"_blank\"><font color=\"red\"><b>Port doublonné</b></font></a>";
+                                   }
+                              }
+                         ?>
+
+                         <br><strong>Profession</strong> : <?php echo $utilisateur['profession']; ?>
+                          <br><strong>Digicode</strong> : <?php echo $utilisateur['digicode']; ?>
+                          <br><strong>Interphone</strong> : <?php echo $utilisateur['interphone']; ?>
+                          <br><strong>Etage</strong> : <?php echo $utilisateur['etage']; ?>
+                         <br><strong>Ascenseur</strong> : <?php echo ($utilisateur['ascenseur']==1?"Oui":"Non"); ?>
+                         <br><strong>Code ascenseur</strong> : <?php echo $utilisateur['codeascenseur']; ?>
+                         <br><strong>Horaires d'ouverture</strong> : <?php echo $utilisateur['horairesouverture']; ?>
+                         <br><strong>Info importante</strong> : <?php echo $utilisateur['infoimportante']; ?>
+                    </div>
+                    <div id="edit_adresse" class="infos_client" style="display:none; width: 370px;">
+                         <center><span class="title_infos">Coordonnées</span></center>
+                         <br />
+                         <form method="post" name="form_adresse" style="padding: 0; margin: 0;">
+                              <input type="hidden" name="userid" value="<?php echo $utilisateur['userid']; ?>">
+                              <input type="hidden" name="action" value="editer">
+                              <input type="hidden" name="edituser" value="1">
+                              <input type="hidden" name="nocomplement" value="1">
+                              <table class="edit">
+                                   <tr>
+                                        <td style="width:70px;">
+                                             Civilité :
+                                        </td>
+                                        <td>
+                                             <select name="civilite">
+                                                  <option value="0" <?php echo ($utilisateur['civilite'] == 'Monsieur' ? "selected" : ""); ?>>Monsieur</option>
+                                                  <option value="1" <?php echo ($utilisateur['civilite'] == 'Madame' ? "selected" : ""); ?>>Madame</option>
+                                             </select>
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             Prénom :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="prenom" value="<?php echo $utilisateur['prenom'] ?>">
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             Nom :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="nom" value="<?php echo $utilisateur['nom'] ?>">
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             Profession :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="profession" value="<?php echo $utilisateur['profession'] ?>">
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             Société :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="raisonsociale" value="<?php echo $utilisateur['raisonsociale'] ?>">
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             TVA intra. :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="tvaintracom" value="<?php echo $utilisateur['tvaintracom'] ?>">
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             N° SIRET :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="siret" value="<?php echo $utilisateur['siret'] ?>">
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             N° EORI :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="eori" value="<?php echo $utilisateur['eori'] ?>">
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             Adresse :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="adresse" value="<?php echo $utilisateur['adresse'] ?>">
+                                        </td>
+                                   </tr>
+                                   <!--<tr>
+                                        <td>
+                                             Complément d'adresse 1:
+                                        </td>
+                                        <td>
+                                             <input type="text" name="adresse2" value="<?php echo $utilisateur['adresse2'] ?>">
+                                        </td>
+                                   </tr> -->
+                                   <tr>
+                                        <td>
+                                             Code postal :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="codepostal" value="<?php echo $utilisateur['codepostal'] ?>">
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             Ville :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="ville" value="<?php echo $utilisateur['ville'] ?>">
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td style="width:80px;">
+                                             Pays :
+                                        </td>
+                                        <td>
+                                             <select name="paysid">
+                                                  <?php foreach($tabPays as $le_pays){ ?>
+                                                       <option value="<?php echo $le_pays['paysid']; ?>" <?php echo $le_pays['paysid'] == $utilisateur['paysid'] ? 'selected' : ''; ?>><?php echo $le_pays['libelle']; ?></option>
+                                                  <?php } ?>
+                                             </select>
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             Langue :
+                                        </td>
+                                        <td>
+                                             <select name="langue">
+                                                  <?php foreach($langues as $la_langue){ ?>
+                                                       <option value="<?php echo $la_langue; ?>" <?php echo $la_langue == $utilisateur['langue'] ? 'selected' : ''; ?>><?php echo $la_langue; ?></option>
+                                                  <?php } ?>
+                                             </select>
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             Email :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="mail" value="<?php echo $utilisateur['mail'] ?>">
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             Téléphone :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="telephone" value="<?php echo $utilisateur['telephone'] ?>">
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             Portable :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="portable" value="<?php echo $utilisateur['portable'] ?>">
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td colspan="2">
+                                             <center><span class="title_infos">Informations livraison</span></center>
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             Digicode :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="digicode" value="<?php echo $utilisateur['digicode'] ?>">
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             Interphone :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="interphone" value="<?php echo $utilisateur['interphone'] ?>">
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             Etage :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="etage" value="<?php echo $utilisateur['etage'] ?>">
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             Ascenseur :
+                                        </td>
+                                        <td>
+                                             <input type="radio" name="ascenseur" value="1" <?php echo ($utilisateur['ascenseur']==1?"checked":"") ?> style="width:auto"> Oui <input type="radio" name="ascenseur" value="0" style="width:auto" <?php echo ($utilisateur['ascenseur']==0?"checked":"")?>> Non
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             Code ascenseur :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="codeascenseur" value="<?php echo $utilisateur['codeascenseur'] ?>">
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             Horaire d'ouverture :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="horairesouverture" value="<?php echo $utilisateur['horairesouverture'] ?>">
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <td>
+                                             Info importante :
+                                        </td>
+                                        <td>
+                                             <input type="text" name="infoimportante" value="<?php echo $utilisateur['infoimportante'] ?>">
+                                        </td>
+                                   </tr>     
+                                   <tr>
+                                        <td colspan="2" style="text-align: center; padding: 5px 0 0 0;">
+                                             <a href="javascript:void(0);" title="Valider" onclick="document.forms.form_adresse.submit();"><img src="<?php echo BACK_URL; ?>/images/icon/succes.png" alt="Valider"></a>
+                                             <a href="javascript:void(0);" title="Annuler" onclick="affiche_div('show_adresse', 'edit_adresse');"><img src="<?php echo BACK_URL; ?>/images/icon/cancel.png" alt="Annuler"></a>
+                                        </td>
+                                   </tr>
+                              </table>
+                         </form>
+                    </div>
