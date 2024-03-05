@@ -303,7 +303,6 @@
     <table class="edit">
       <tr>
         <td style="width:70px;">Civilité :</td>
-
         <td>
           <select name="civilite">
             <option value="0" <?php echo ($utilisateur['civilite']=='Monsieur' ? "selected" : "" ); ?>>Monsieur</option>
@@ -313,18 +312,12 @@
       </tr>
 
       <tr>
-        <td>
-          Prénom :
-        </td>
-
-        <td>
-          <input type="text" name="prenom" value="<?php echo $utilisateur['prenom'] ?>">
-        </td>
+        <td>Prénom :</td>
+        <td><input type="text" name="prenom" value="<?php echo $utilisateur['prenom'] ?>"></td>
       </tr>
 
       <tr>
         <td>Nom :</td>
-
         <td><input type="text" name="nom" value="<?php echo $utilisateur['nom'] ?>"></td>
       </tr>
 
@@ -368,160 +361,138 @@
       </tr> -->
 
       <tr>
-        <td>
-          Code postal :
-        </td>
-        <td>
-          <input type="text" name="codepostal" value="<?php echo $utilisateur['codepostal'] ?>">
-        </td>
+        <td>Code postal :</td>
+        <td><input type="text" name="codepostal" value="<?php echo $utilisateur['codepostal'] ?>"></td>
       </tr>
 
       <tr>
-        <td>
-          Ville :
-        </td>
-        <td>
-          <input type="text" name="ville" value="<?php echo $utilisateur['ville'] ?>">
-        </td>
+        <td>Ville :</td>
+        <td><input type="text" name="ville" value="<?php echo $utilisateur['ville'] ?>"></td>
       </tr>
 
       <tr>
-        <td style="width:80px;">
-          Pays :
-        </td>
+        <td style="width:80px;">Pays :</td>
         <td>
           <select name="paysid">
             <?php foreach($tabPays as $le_pays){ ?>
-            <option value="<?php echo $le_pays['paysid']; ?>" <?php echo $le_pays['paysid']==$utilisateur['paysid']
-              ? 'selected' : '' ; ?>>
-              <?php echo $le_pays['libelle']; ?>
-            </option>
+              <option
+                value="<?php echo $le_pays['paysid']; ?>"
+                <?php
+                  echo $le_pays['paysid'] == $utilisateur['paysid']
+                    ? 'selected'
+                    : ''
+                  ;
+                ?>
+              >
+                <?php echo $le_pays['libelle']; ?>
+              </option>
             <?php } ?>
           </select>
         </td>
       </tr>
 
       <tr>
-        <td>
-          Langue :
-        </td>
-
+        <td>Langue :</td>
         <td>
           <select name="langue">
-            <?php foreach($langues as $la_langue){ ?>
-            <option value="<?php echo $la_langue; ?>" <?php echo $la_langue==$utilisateur['langue'] ? 'selected' : '' ;
-              ?>>
-              <?php echo $la_langue; ?>
-            </option>
+            <?php foreach($langues as $la_langue) { ?>
+              <option
+                value="<?php echo $la_langue; ?>"
+                <?php
+                  echo $la_langue == $utilisateur['langue']
+                    ? 'selected'
+                    : ''
+                  ;
+                ?>
+              >
+                <?php echo $la_langue; ?>
+              </option>
             <?php } ?>
           </select>
         </td>
       </tr>
 
       <tr>
-        <td>
-          Email :
-        </td>
-
-        <td>
-          <input type="text" name="mail" value="<?php echo $utilisateur['mail'] ?>">
-        </td>
+        <td>Email :</td>
+        <td><input type="text" name="mail" value="<?php echo $utilisateur['mail'] ?>"></td>
       </tr>
-      <tr>
-        <td>
-          Téléphone :
-        </td>
 
-        <td>
-          <input type="text" name="telephone" value="<?php echo $utilisateur['telephone'] ?>">
-        </td>
+      <tr>
+        <td>Téléphone :</td>
+        <td><input type="text" name="telephone" value="<?php echo $utilisateur['telephone'] ?>"></td>
       </tr>
-      <tr>
-        <td>
-          Portable :
-        </td>
 
-        <td>
-          <input type="text" name="portable" value="<?php echo $utilisateur['portable'] ?>">
-        </td>
+      <tr>
+        <td>Portable :</td>
+        <td><input type="text" name="portable" value="<?php echo $utilisateur['portable'] ?>"></td>
       </tr>
 
       <tr>
         <td colspan="2">
-          <center><span class="title_infos">Informations livraison</span></center>
+          <center>
+            <span class="title_infos">Informations livraison</span>
+          </center>
         </td>
       </tr>
 
       <tr>
-        <td>
-          Digicode :
-        </td>
+        <td>Digicode :</td>
+        <td><input type="text" name="digicode" value="<?php echo $utilisateur['digicode'] ?>"></td>
+      </tr>
 
+      <tr>
+        <td>Interphone :</td>
+        <td><input type="text" name="interphone" value="<?php echo $utilisateur['interphone'] ?>"></td>
+      </tr>
+
+      <tr>
+        <td>Etage :</td>
+        <td><input type="text" name="etage" value="<?php echo $utilisateur['etage'] ?>"></td>
+      </tr>
+
+      <tr>
+        <td>Ascenseur :</td>
         <td>
-          <input type="text" name="digicode" value="<?php echo $utilisateur['digicode'] ?>">
+          <input
+            type="radio"
+            name="ascenseur"
+            value="1"
+            <?php
+              echo $utilisateur['ascenseur'] == 1
+                ? "checked"
+                : ""
+            ?>
+
+            style="width:auto"
+          > Oui 
+          
+          <input
+            type="radio"
+            name="ascenseur"
+            value="0"
+            style="width:auto"
+            <?php
+              echo $utilisateur['ascenseur'] == 0
+                ? "checked"
+                : "")
+            ?>
+          > Non
         </td>
       </tr>
 
       <tr>
-        <td>
-          Interphone :
-        </td>
-
-        <td>
-          <input type="text" name="interphone" value="<?php echo $utilisateur['interphone'] ?>">
-        </td>
+        <td>Code ascenseur :</td>
+        <td><input type="text" name="codeascenseur" value="<?php echo $utilisateur['codeascenseur'] ?>"></td>
       </tr>
 
       <tr>
-        <td>
-          Etage :
-        </td>
-
-        <td>
-          <input type="text" name="etage" value="<?php echo $utilisateur['etage'] ?>">
-        </td>
+        <td>Horaire d'ouverture :</td>
+        <td><input type="text" name="horairesouverture" value="<?php echo $utilisateur['horairesouverture'] ?>"></td>
       </tr>
 
       <tr>
-        <td>
-          Ascenseur :
-        </td>
-
-        <td>
-          <input type="radio" name="ascenseur" value="1" <?php echo ($utilisateur['ascenseur']==1?"checked":"") ?>
-          style="width:auto"> Oui <input type="radio" name="ascenseur" value="0" style="width:auto" <?php echo
-            ($utilisateur['ascenseur']==0?"checked":"")?>> Non
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          Code ascenseur :
-        </td>
-
-        <td>
-          <input type="text" name="codeascenseur" value="<?php echo $utilisateur['codeascenseur'] ?>">
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          Horaire d'ouverture :
-        </td>
-
-        <td>
-          <input type="text" name="horairesouverture" value="<?php echo $utilisateur['horairesouverture'] ?>">
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          Info importante :
-        </td>
-
-        <td>
-          <input type="text" name="infoimportante" value="<?php echo $utilisateur['infoimportante'] ?>">
-        </td>
+        <td>Info importante :</td>
+        <td><input type="text" name="infoimportante" value="<?php echo $utilisateur['infoimportante'] ?>"></td>
       </tr>
 
       <tr>
