@@ -5,6 +5,9 @@
   J'aurais donc des "foreach" coté vue, et dans cette vue (userPage)
 
 - userPage.html: ici c'est l'inverse j'observe du code php qui va requeter la BDD depuis la vue.
-  Ce traitement "décalable" dans la logique.
+  Ce traitement est "décalable" dans la logique.
 
-    - de nombreux élèments sont répété. J'aurais tendance à voir (dans un second temps)
+    - de nombreux élèments sont répété coté vue. J'aurais tendance à vouloir factoriser aussi
+    les éléments de la vue.
+
+
