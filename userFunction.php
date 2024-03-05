@@ -4,7 +4,7 @@
     $pc="";
 
     $spy = ""
-      . "<a href=\"javascript:void(0)\" onclick=\"affiche_cache('spy_".$rubrique."_".$artid."');\">SPY</a>"
+      . "<a href=\"javascript:void(0)\" onclick=\"affiche_cache('spy_" . $rubrique . "_" . $artid . "');\">SPY</a>"
       . "<table
             id=\"spy_" . $rubrique . "_" . $artid . "\"
             style=\"
