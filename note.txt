@@ -1,0 +1,10 @@
+- user.php contient beaucoup de "vue" dans sa logique.
+  j'aurais tendance à tendre vers une logique envoyé à la vue pour l'affichage pour bien séparer
+  les données envoyé la logique, et le resultat affiché.
+
+  J'aurais donc des "foreach" coté vue, et dans cette vue (userPage)
+
+- userPage.html: ici c'est l'inverse j'observe du code php qui va requeter la BDD depuis la vue.
+  Ce traitement "décalable" dans la logique.
+
+    - de nombreux élèments sont répété. J'aurais tendance à voir (dans un second temps)
